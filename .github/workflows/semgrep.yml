@@ -1,2 +1,19 @@
-- name: Semgrep x semgrep-rules-manager
-  uses: iosifache/semgrep-rules-manager@v0.4.0
+name: Semgrep SAST
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Manage Semgrep rules
+        uses: iosifache/semgrep-rules-manager@v0.4.0
+        with:
+          config-path: .semgrep.yml
