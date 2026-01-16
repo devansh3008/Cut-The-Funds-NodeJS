@@ -1,4 +1,4 @@
-//Subjected to SemGrep Scanning Hacking
+//Subjected to SemGrep Scanning!
 
 require("./db/db.js");
 const mongoose = require("mongoose");
