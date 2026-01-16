@@ -10,15 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Manage Semgrep rules
-        uses: iosifache/semgrep-rules-manager@v0.4.0
-        with:
-          config-path: .semgrep.yml
+      - uses: actions/checkout@v4
 
       - name: Run Semgrep
         uses: semgrep/semgrep-action@v1
         with:
-          config: .semgrep.yml
+          config: p/default
